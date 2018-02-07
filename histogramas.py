@@ -20,8 +20,8 @@ def grayHist():
     hist = cv2.calcHist([img],[0],None,[256],[0,256])
     
     # Plota o histograma e a imagem ao lado
-    plt.subplot(221), plt.imshow(img, 'gray')
-    plt.subplot(222), plt.plot(hist)
+    plt.subplot(121), plt.imshow(img, 'gray')
+    plt.subplot(122), plt.plot(hist)
     plt.xlim([0,256])
     plt.show()
 
@@ -31,8 +31,8 @@ def colorHist(img):
     color = ('b', 'g', 'r')
     for i, j in enumerate(color):
         hist = cv2.calcHist([img], [i], None, [256], [0, 256])
-        plt.subplot(221), plt.imshow(img, 'brg')
-        plt.subplot(222), plt.plot(hist, color = j)
+        plt.subplot(121), plt.imshow(img, 'brg')
+        plt.subplot(122), plt.plot(hist, color = j)
         plt.xlim([0, 256])
     plt.show()
     
