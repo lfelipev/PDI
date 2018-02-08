@@ -11,6 +11,15 @@ OBS: Comentar e descomentar as funções na main() para testá-las individualmen
 import cv2
 from matplotlib import pyplot as plt
 
+#display image
+def showImage(img):
+    cv2.imshow('lena',img)
+    
+    while True:
+        k = cv2.waitKey(0) & 0xFF     
+        if k == 27: break             # ESC key to exit 
+    cv2.destroyAllWindows()
+
 ## Calcula e plota o histograma de uma imagem em escala de cinza
 def grayHist():
     # Carrega a imagem
@@ -62,7 +71,8 @@ def main():
     img = cv2.imread('lena.png')
     b,g,r = cv2.split(img)
     rgb_img = cv2.merge([r, g, b])
-        
+     
+    #showImage(img)
     #grayHist()
     #colorHist(rgb_img)
     #gaussianNoise(rgb_img)
